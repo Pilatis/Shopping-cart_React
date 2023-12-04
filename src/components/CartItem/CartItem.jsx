@@ -8,14 +8,14 @@ import propTypes from 'prop-types'
 
 
 
-const CartItem = ({ data }) => {
+const CartItem = ({ data }) => {//Define componente `CartItem` e recebe um objeto `data` como propriedade
 
-  const { cartItems, setCartItems } = useContext(AppContext);
-  const { id, thumbnail, title, price } = data;
+  const { cartItems, setCartItems } = useContext(AppContext);//Utiliza o hook useContext para acessar os estados cartItems e setCartItems fornecidos pelo AppContext.
+  const { id, thumbnail, title, price } = data; //(desestruturação) do objeto data, extraindo as propriedades id, thumbnail, title e price do objeto data.
 
   const handleRemoveItem = () => {
-    const updatedItems = cartItems.filter((item) => item.id != id);
-    setCartItems(updatedItems);
+    const updatedItems = cartItems.filter((item) => item.id != id);//Essa função filtra os cartItems para remover o item com o id
+    setCartItems(updatedItems); //atualiza o estado do carrinho usando setCartItems.
   };
 
 
