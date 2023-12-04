@@ -1,0 +1,30 @@
+.search-bar {
+    display: flex;
+    background: #fff;
+    width: 250px;
+    max-width: 600px;
+    justify-content: space-between;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    border: none;
+    gap: 12px;
+    padding-right: 13px
+}
+
+.search__input {
+    padding: 8px;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: 500px;
+}
+
+.search__button {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
