@@ -12,8 +12,8 @@ const CartButton = () => {
       <button 
         type="button"
          className='cart__button'
-         onClick={ () => setIsCartVisible(!isCartVisible) }>
-
+         onClick={ () => setIsCartVisible(!isCartVisible) }>{/*Quando clicado, ele chama a função setIsCartVisible para alternar a visibilidade do carrinho entre visível e invisível.*/}
+        
         <FaShoppingCart />
         { cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span> }
       </button>
