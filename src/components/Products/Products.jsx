@@ -10,12 +10,12 @@ const Products = () => {
     const { products, setProducts, loading, setLoading } = useContext(AppContext)
     
 
-    useEffect(() => {
-    
-      fetchProducts('bike').then((response) => {
-       setProducts(response);
-       setLoading(false)
-      });
+    useEffect(() => {//Utiliza o hook useEffect para realizar operações após a renderização inicial do componente. 
+                  //Está disparando uma requisição para buscar produtos assim que o componente é montado
+      fetchProducts('bike').then((response) => {//Chama a função fetchProducts é para buscar produtos 
+       setProducts(response); //A resposta da requisição, ele atualiza o estado `Products`
+       setLoading(false)//E com a resposta da requisição Products define o estado loading como false
+      }); //Que indeca a operação de carregamento terminou
 
     }, []);
 
@@ -24,8 +24,8 @@ const Products = () => {
 
    (loading && <Loading />) || (<section className='products container'>
    {products.map((product) => <ProductCard key={product.id} data={product} />)}
-   </section>)
-
+   </section>) // Mapeia os products e renderiza um componente ProductCard para cada produto no array.
+      //Cada ProductCard recebe um key exclusivo e os dados do produto através da propriedade data.
   )
 }
 
