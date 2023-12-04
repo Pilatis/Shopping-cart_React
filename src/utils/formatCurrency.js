@@ -1,7 +1,7 @@
-const formatCurrency = (value) => {
-  return value.toLocaleString('pt-br', {
-    style: 'currency',
-    currency: 'BRL'
+const formatCurrency = (value) => {//Função chamada formatCurrency  que recebe um parametro `value`
+  return value.toLocaleString('pt-br', {//Método que retorna representação regionais do usuário
+    style: 'currency', //estilo de formatação (moeda)
+    currency: 'BRL' //A moeda que vai ser usada
   });
 }
 
