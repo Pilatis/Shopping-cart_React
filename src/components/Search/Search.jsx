@@ -7,18 +7,19 @@ import AppContext from '../../context/AppContext';
 
 const Search = () => {
 
-  const { setProducts, setLoading } = useContext(AppContext);
+  const { setProducts, setLoading } = useContext(AppContext);//Pega os estados dentro do AppContext. Que são estados de mudanças(funções que atualizam o estado primario)
   const [searchValue, setSearchValue] = useState('');
     
   const handleSearch = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault();//prevenir o comportamento padrão de atualização da página, 
+    setLoading(true);//indica que a busca está em andamento e permite que a interface do usuário (UI) mostre um indicador de carregamento para indicar ao usuário que a operação está em progresso.
 
-    const produtcs = await fetchProducts(searchValue);
-
-    setProducts(produtcs);
-    setLoading(false);
-    setSearchValue('');
+    const produtcs = await fetchProducts(searchValue);//função fetchProducts para buscar os produtos com base no valor atual da caixa de pesquisa (searchValue). 
+                                     //A palavra-chave await é utilizada antes da chamada da função para aguardar a resolução da Promise retornada pela função fetchProducts. 
+                                     //Isso garante que a execução aguarde até que a operação de busca de produtos seja concluída antes de prosseguir para a próxima linha de código.
+    setProducts(produtcs);//Atualiza o estado products com os produtos obtidos da função fetchProducts.
+    setLoading(false);// Define o estado loading como false. Isso sinaliza que a operação de busca foi concluída, 
+    setSearchValue('');//Limpa o campo de pesquisa, definindo searchValue como uma string vazia (''). 
   }
 
   return (
