@@ -16,8 +16,8 @@ const CartButton = () => {
         
         <FaShoppingCart />
         { cartItems.length > 0 && <span className="cart-status">{cartItems.length}</span> }
-      </button>
-     </>
+      </button> 
+     </> //Verifica se há itens no carrinho (cartItems.length > 0). Se houver, renderiza um elemento <span> com a classe cart-status que exibe o número de itens no carrinho (cartItems.length).
   )
 }
 
